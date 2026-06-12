@@ -1,0 +1,230 @@
+# AI freelance / evaluation platform registry (source of truth)
+#
+# Hand-curated. Edit this file to add or correct platforms.
+# Pay notes are deliberately vague where rates are not publicly verifiable.
+# The pipeline NEVER overwrites this file. It only reads it.
+#
+# Fields:
+#   id            stable slug (lowercase, no spaces)
+#   name          display name
+#   url           main marketing/site URL (used for link health)
+#   signup_url    where you actually apply (used for signup-status sniffing)
+#   category      one of: expert_match, eval_platform, research_fellowship, microtask
+#   tier          1 = best fit for you, 2 = solid, 3 = long shot / watch
+#   fit_notes     why it does or does not suit your profile
+#   pay_notes     honest, hand-curated. No invented numbers.
+#   tags          freeform list
+
+platforms:
+  # ---------- Tier 1: best fit for a builder + analytics + eval background ----------
+  - id: dataannotation
+    name: DataAnnotation.tech
+    url: https://www.dataannotation.tech
+    signup_url: https://www.dataannotation.tech
+    category: expert_match
+    tier: 1
+    fit_notes: LLM training, coding, and reasoning tasks. Coding background helps. Entry is a paid trial.
+    pay_notes: Reported as one of the better crowd-AI payers, but rate varies by project. Verify on offer.
+    tags: [llm-training, coding, reasoning]
+
+  - id: alignerr
+    name: Alignerr (Labelbox)
+    url: https://www.alignerr.com
+    signup_url: https://www.alignerr.com
+    category: expert_match
+    tier: 1
+    fit_notes: Expert AI trainer network. Domain and coding tasks. Handshake/Outlier-style structure.
+    pay_notes: Higher pay tier by reputation. Project dependent. Verify on offer.
+    tags: [expert, rlhf, coding]
+
+  - id: mercor
+    name: Mercor
+    url: https://mercor.com
+    signup_url: https://mercor.com
+    category: expert_match
+    tier: 1
+    fit_notes: Matches experts to AI-lab projects via interview. A strong GitHub profile is a real advantage here.
+    pay_notes: Project and seniority dependent. Verify on offer.
+    tags: [interview, ai-labs, coding]
+
+  - id: mindrift
+    name: Mindrift (Toloka)
+    url: https://www.mindrift.ai
+    signup_url: https://www.mindrift.ai
+    category: expert_match
+    tier: 1
+    fit_notes: Freelance AI-tutor projects for domain experts including coding and analytics. Flexible.
+    pay_notes: Per-project rates. Comes in waves. Verify on offer.
+    tags: [ai-tutor, flexible, coding]
+
+  - id: surge
+    name: Surge AI
+    url: https://www.surgehq.ai
+    signup_url: https://www.surgehq.ai
+    category: expert_match
+    tier: 1
+    fit_notes: High-quality RLHF and evaluation data. Selective, good reputation, rubric-style work.
+    pay_notes: Reputable payer. Selective intake. Verify on offer.
+    tags: [rlhf, eval, selective]
+
+  - id: turing
+    name: Turing
+    url: https://www.turing.com
+    signup_url: https://www.turing.com/jobs
+    category: expert_match
+    tier: 1
+    fit_notes: AGI/LLM training plus coding expert work. Dev-leaning, so your repos are an asset.
+    pay_notes: Varies by role and region. Verify on offer.
+    tags: [llm-training, coding, dev]
+
+  # ---------- Tier 2: established AI eval / data platforms ----------
+  - id: scale_outlier
+    name: Scale AI / Outlier / Remotasks
+    url: https://scale.com
+    signup_url: https://outlier.ai
+    category: eval_platform
+    tier: 2
+    fit_notes: You know it. Outlier is Scale's contributor side. Quality and pay swing by project.
+    pay_notes: Highly variable by project. Invite-only projects tend to pay better.
+    tags: [eval, vision, reasoning, known]
+
+  - id: toloka
+    name: Toloka AI
+    url: https://toloka.ai
+    signup_url: https://toloka.ai/tolokers
+    category: eval_platform
+    tier: 2
+    fit_notes: Older crowdsourcing platform that pivoted into LLM eval and expert tasks.
+    pay_notes: Per-task. Expert tracks pay more than legacy microtasks. Verify on offer.
+    tags: [eval, crowdsource]
+
+  - id: invisible
+    name: Invisible Technologies
+    url: https://www.invisible.co
+    signup_url: https://www.invisible.co/careers
+    category: eval_platform
+    tier: 2
+    fit_notes: AI training and LLM QA work for labs. More ops-flavored.
+    pay_notes: Decent by reputation. Role dependent. Verify on offer.
+    tags: [llm-qa, ops, training]
+
+  - id: definedai
+    name: Defined.ai
+    url: https://www.defined.ai
+    signup_url: https://www.defined.ai/the-crowd
+    category: eval_platform
+    tier: 2
+    fit_notes: Speech, text, and LLM data marketplace. Corporate clients, slower onboarding.
+    pay_notes: Project dependent. Verify on offer.
+    tags: [speech, text, marketplace]
+
+  - id: imerit
+    name: iMerit (Ango Hub)
+    url: https://imerit.net
+    signup_url: https://imerit.net/careers
+    category: eval_platform
+    tier: 2
+    fit_notes: Annotation plus expert tasks. More structured and enterprise.
+    pay_notes: Enterprise contracts. Verify on offer.
+    tags: [annotation, enterprise]
+
+  - id: innodata
+    name: Innodata
+    url: https://innodata.com
+    signup_url: https://innodata.com/careers
+    category: eval_platform
+    tier: 2
+    fit_notes: Enterprise AI data prep with expert annotator programs.
+    pay_notes: Enterprise. Verify on offer.
+    tags: [annotation, enterprise]
+
+  - id: sapien
+    name: Sapien AI
+    url: https://www.sapien.io
+    signup_url: https://www.sapien.io
+    category: eval_platform
+    tier: 2
+    fit_notes: Crowd labeling and RLHF, newer player.
+    pay_notes: Newer, rates unproven. Verify on offer.
+    tags: [rlhf, labeling, newer]
+
+  - id: pareto
+    name: Pareto.ai
+    url: https://pareto.ai
+    signup_url: https://pareto.ai
+    category: eval_platform
+    tier: 2
+    fit_notes: Data-labeling startup doing expert and RLHF tasks.
+    pay_notes: Startup, rates vary. Verify on offer.
+    tags: [rlhf, labeling, startup]
+
+  - id: micro1
+    name: Micro1
+    url: https://www.micro1.ai
+    signup_url: https://www.micro1.ai
+    category: eval_platform
+    tier: 2
+    fit_notes: AI-driven vetting and recruiting that places experts into AI data work.
+    pay_notes: Placement dependent. Verify on offer.
+    tags: [vetting, recruiting, expert]
+
+  - id: clickworker
+    name: Clickworker / UHRS
+    url: https://www.clickworker.com
+    signup_url: https://www.clickworker.com/clickworker-job
+    category: microtask
+    tier: 3
+    fit_notes: Microtask crowd, some AI tasks. Filler-tier pay but always-on.
+    pay_notes: Low, per-task. Filler work.
+    tags: [microtask, filler]
+
+  # ---------- Tier 3: fellowship / research / hard-to-get ----------
+  - id: anthropic
+    name: Anthropic
+    url: https://www.anthropic.com
+    signup_url: https://www.anthropic.com/careers
+    category: research_fellowship
+    tier: 3
+    fit_notes: Safety, red-team, and contractor data roles appear here periodically. Selective.
+    pay_notes: Strong, but selective and intermittent.
+    tags: [safety, red-team, selective]
+
+  - id: openai
+    name: OpenAI
+    url: https://openai.com
+    signup_url: https://openai.com/careers/search
+    category: research_fellowship
+    tier: 3
+    fit_notes: Runs expert AI-training and contractor programs. Search "expert" or "AI trainer". Very selective.
+    pay_notes: High when active, very selective. The old /contributions link is unreliable; use careers.
+    tags: [expert, contractor, selective]
+
+  - id: prolific
+    name: Prolific
+    url: https://www.prolific.com
+    signup_url: https://www.prolific.com/participants
+    category: research_fellowship
+    tier: 3
+    fit_notes: Research-study platform. Hosts AI/LLM behavior experiments beyond surveys. Easy to start.
+    pay_notes: Per-study rates set by researchers. Easy entry, uneven volume.
+    tags: [research, studies, easy-entry]
+
+  - id: arc_prize
+    name: ARC Prize
+    url: https://arcprize.org
+    signup_url: https://arcprize.org
+    category: research_fellowship
+    tier: 3
+    fit_notes: Reasoning benchmark with prize money. A competition, not steady work, but in your wheelhouse.
+    pay_notes: Prize-based, not wages. Competition.
+    tags: [reasoning, competition, prize]
+
+  - id: humanloop
+    name: Humanloop
+    url: https://humanloop.com
+    signup_url: https://humanloop.com/careers
+    category: research_fellowship
+    tier: 3
+    fit_notes: NOTE - this is an LLM eval/dev tooling company, not a gig platform. Watch for full-time/contract roles.
+    pay_notes: Not gig work. Salaried roles only.
+    tags: [tooling, company, not-gig]

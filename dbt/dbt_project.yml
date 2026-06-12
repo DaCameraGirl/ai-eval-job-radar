@@ -1,0 +1,16 @@
+name: "radar"
+version: "1.0.0"
+config-version: 2
+
+profile: "radar"
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages", "logs"]
+
+models:
+  radar:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

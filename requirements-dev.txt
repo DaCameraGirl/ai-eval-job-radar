@@ -1,0 +1,2 @@
+# Dev-only tools (linting, etc.). Not needed to run the app.
+ruff>=0.4

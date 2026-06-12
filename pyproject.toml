@@ -5,3 +5,7 @@ extend-exclude = ["dbt/target", ".venv"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# Static-site generator holds long HTML/CSS template lines by nature.
+"scripts/build_site.py" = ["E501"]

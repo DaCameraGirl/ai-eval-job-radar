@@ -1,0 +1,51 @@
+name: Weekly refresh
+
+on:
+  schedule:
+    # Mondays at 13:00 UTC
+    - cron: "0 13 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run refresh (link health, signup status, discovery)
+        env:
+          # Optional. If unset, the discovery step skips itself gracefully.
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: python -m scripts.refresh
+
+      - name: Open a pull request with any changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/weekly-refresh
+          commit-message: "data: weekly link health + signup status refresh"
+          title: "Weekly radar refresh"
+          body: |
+            Automated weekly refresh.
+
+            - Re-checked every platform link.
+            - Re-sniffed signup status (best-effort heuristic).
+            - Surfaced any new platform candidates for review.
+
+            Review the diff in `data/status_snapshot.csv` and
+            `data/discovered_candidates.yml`, then merge if it looks right.
+          labels: automated, data-refresh
+          delete-branch: true
