@@ -1,0 +1,10 @@
+duckdb>=1.0
+requests>=2.31
+PyYAML>=6.0
+beautifulsoup4>=4.12
+python-dotenv>=1.0
+pandas>=2.0
+dbt-core>=1.7
+dbt-duckdb>=1.7
+streamlit>=1.30
+tavily-python>=0.3
