@@ -1,5 +1,15 @@
 # 🛰️ AI Eval Job Radar
 
+[![CI](https://github.com/DaCameraGirl/ai-eval-job-radar/actions/workflows/ci.yml/badge.svg)](https://github.com/DaCameraGirl/ai-eval-job-radar/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-dbt%20models-CC6526)
+![HTML5](https://img.shields.io/badge/HTML5-page-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-styling-1572B6?logo=css3&logoColor=white)
+![YAML](https://img.shields.io/badge/YAML-registry-CB171E?logo=yaml&logoColor=white)
+![License](https://img.shields.io/badge/license-proprietary-red)
+
+**Live dashboard:** https://dacameragirl.github.io/ai-eval-job-radar/
+
 I got tired of "best AI gig sites" lists that go stale the day they post and quote pay
 rates somebody clearly made up. So I built the thing those lists should have been: a
 small data app that tracks where you can actually get AI evaluation work, re-checks
@@ -9,6 +19,16 @@ It is also, on purpose, a portfolio piece. It runs the exact stack these platfor
 for: Python ingestion, a warehouse, dbt models, a dashboard. A tracker of AI eval jobs
 that happens to prove I can do the data work those same jobs are about. Yes, that is a
 little meta. That is the point.
+
+## Built with
+
+- **Python** — ingestion, link and signup checks, the static-site generator, the Streamlit app
+- **SQL (dbt)** — staging and mart models on dbt-duckdb
+- **HTML + CSS** — the static GitHub Pages dashboard, in `templates/`
+- **YAML** — the platform registry and the CI workflows
+
+GitHub's language bar is tuned with `.gitattributes` so it shows all of the above, not
+just Python.
 
 ## What it actually does
 

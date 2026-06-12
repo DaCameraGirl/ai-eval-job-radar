@@ -1,8 +1,11 @@
 """Build a static radar page for GitHub Pages from the tracked data files.
 
 No database needed. Reads data/platforms.yml plus data/status_snapshot.csv (if it
-exists) and writes a single self-contained site/index.html. Runs in CI; the output
-is gitignored.
+exists), fills templates/page.html with templates/style.css, and writes a single
+self-contained site/index.html. Runs in CI; the output is gitignored.
+
+The HTML and CSS live in real files under templates/ (not buried in this script) so
+the page markup is editable on its own and GitHub counts the languages honestly.
 """
 from __future__ import annotations
 
@@ -14,15 +17,8 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+TEMPLATES = ROOT / "templates"
 SITE = ROOT / "site"
-
-CATEGORY_LABELS = {
-    "expert_match": "Expert match",
-    "eval_platform": "Eval platform",
-    "research_fellowship": "Research / fellowship",
-    "microtask": "Microtask",
-    "contest": "Contest",
-}
 
 SIGNUP_BADGE = {
     "open": ("open", "#1f9d55"),
@@ -30,6 +26,8 @@ SIGNUP_BADGE = {
     "closed": ("closed", "#b91c1c"),
     "unknown": ("not checked", "#4b5563"),
 }
+
+TIER_NAMES = {1: "Tier 1 - best fit", 2: "Tier 2 - solid", 3: "Tier 3 - long shots"}
 
 
 def _load_platforms() -> list[dict]:
@@ -68,72 +66,43 @@ def _row_html(p: dict, status: dict) -> str:
       </tr>"""
 
 
+def _section_html(tier: int, platforms: list[dict], status: dict[str, dict]) -> str:
+    rows = [p for p in platforms if int(p["tier"]) == tier]
+    if not rows:
+        return ""
+    head = (
+        "<thead><tr><th></th><th>Platform</th><th>Signup</th>"
+        "<th>Pay notes</th><th>Why it fits</th></tr></thead>"
+    )
+    body = "".join(_row_html(p, status.get(p["id"], {})) for p in rows)
+    return f"""
+    <h2>{TIER_NAMES[tier]}</h2>
+    <table>
+      {head}
+      <tbody>{body}
+      </tbody>
+    </table>"""
+
+
 def build() -> Path:
     platforms = _load_platforms()
     status, latest = _load_status()
     refreshed = latest or "not yet refreshed"
 
-    sections = []
-    for tier in (1, 2, 3):
-        rows = [p for p in platforms if int(p["tier"]) == tier]
-        if not rows:
-            continue
-        tier_name = {1: "Tier 1 - best fit", 2: "Tier 2 - solid", 3: "Tier 3 - long shots"}[tier]
-        body = "".join(_row_html(p, status.get(p["id"], {})) for p in rows)
-        sections.append(
-            f"""
-    <h2>{tier_name}</h2>
-    <table>
-      <thead><tr><th></th><th>Platform</th><th>Signup</th><th>Pay notes</th><th>Why it fits</th></tr></thead>
-      <tbody>{body}
-      </tbody>
-    </table>"""
-        )
+    sections = "".join(_section_html(t, platforms, status) for t in (1, 2, 3))
+    meta = (
+        f"Status last refreshed: {html.escape(str(refreshed))} &middot; "
+        '<a href="https://github.com/DaCameraGirl/ai-eval-job-radar">source on GitHub</a>'
+    )
 
-    page = f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Eval Job Radar</title>
-<style>
-  :root {{ color-scheme: dark; }}
-  * {{ box-sizing: border-box; }}
-  body {{ margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-         background: #0b0e14; color: #e6e9ef; line-height: 1.5; }}
-  .wrap {{ max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }}
-  h1 {{ font-size: 2rem; margin: 0 0 .25rem; }}
-  .tag {{ color: #8b93a7; font-size: .95rem; max-width: 60ch; }}
-  .meta {{ margin: 1rem 0 2rem; font-size: .85rem; color: #8b93a7; }}
-  h2 {{ margin: 2rem 0 .5rem; font-size: 1.1rem; color: #c8d0e0; border-bottom: 1px solid #1c2230; padding-bottom: .35rem; }}
-  table {{ width: 100%; border-collapse: collapse; font-size: .9rem; }}
-  th {{ text-align: left; color: #8b93a7; font-weight: 600; padding: .5rem .6rem; }}
-  td {{ padding: .55rem .6rem; border-top: 1px solid #161b26; vertical-align: top; }}
-  td.dot {{ width: 1.5rem; text-align: center; }}
-  a {{ color: #6ea8fe; text-decoration: none; }}
-  a:hover {{ text-decoration: underline; }}
-  .notes {{ color: #aeb6c6; font-size: .82rem; }}
-  .badge {{ display: inline-block; padding: .1rem .5rem; border-radius: 999px; color: #fff;
-           font-size: .72rem; font-weight: 600; }}
-  footer {{ margin-top: 3rem; font-size: .8rem; color: #6b7280; }}
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <h1>🛰️ AI Eval Job Radar</h1>
-    <p class="tag">Where to actually get AI evaluation work. Pay and fit notes are hand-curated
-       and honest. Link and signup status refresh weekly. This is a read-only snapshot.</p>
-    <p class="meta">Status last refreshed: {html.escape(str(refreshed))} &middot;
-       <a href="https://github.com/DaCameraGirl/ai-eval-job-radar">source on GitHub</a></p>
-    {''.join(sections)}
-    <footer>
-      Signup status is a best-effort heuristic, not a guarantee. Always confirm on the platform.
-      Built from data/platforms.yml. The interactive version runs on Streamlit.
-    </footer>
-  </div>
-</body>
-</html>
-"""
+    template = (TEMPLATES / "page.html").read_text(encoding="utf-8")
+    css = (TEMPLATES / "style.css").read_text(encoding="utf-8")
+    page = (
+        template.replace("__STYLE__", css)
+        .replace("__META__", meta)
+        .replace("__SECTIONS__", sections)
+    )
+
     SITE.mkdir(parents=True, exist_ok=True)
     out = SITE / "index.html"
     out.write_text(page, encoding="utf-8")

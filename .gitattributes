@@ -1,0 +1,9 @@
+# Tune the GitHub language bar to reflect the real stack, not just Python.
+# GitHub hides "data" languages by default; force YAML and SQL to be counted.
+*.yml  linguist-detectable=true
+*.yaml linguist-detectable=true
+*.sql  linguist-detectable=true
+
+# Keep prose and docs out of the language stats.
+*.md      linguist-documentation
+docs/**   linguist-documentation
