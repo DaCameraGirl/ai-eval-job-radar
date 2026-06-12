@@ -1,0 +1,10 @@
+# DuckDB profile. The warehouse path can be overridden with RADAR_DUCKDB so the
+# orchestrator and CI agree on a single file regardless of working directory.
+radar:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('RADAR_DUCKDB', '../warehouse/radar.duckdb') }}"
+      schema: main
+      threads: 4

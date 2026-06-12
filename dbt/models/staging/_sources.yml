@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: Tables loaded from the tracked source files by pipeline/load_seed.py
+    tables:
+      - name: platforms
+        description: Curated platform registry (source of truth, hand-edited).
+      - name: status_snapshot
+        description: Weekly link-health and signup-status results.
+      - name: discovered
+        description: New platform candidates surfaced by Tavily, pending human review.
