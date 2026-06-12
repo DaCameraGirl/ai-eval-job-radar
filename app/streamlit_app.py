@@ -89,10 +89,10 @@ view = view.copy()
 view["health"] = view.apply(_badge, axis=1)
 
 st.dataframe(
-    view[["tier", "name", "category", "health", "pay_notes", "fit_notes", "url"]],
+    view[["tier", "name", "category", "health", "pay_notes", "fit_notes", "signup_url"]],
     use_container_width=True,
     hide_index=True,
-    column_config={"url": st.column_config.LinkColumn("link")},
+    column_config={"signup_url": st.column_config.LinkColumn("apply")},
 )
 
 st.caption(

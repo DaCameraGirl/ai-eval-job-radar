@@ -181,21 +181,21 @@ platforms:
   # ---------- Tier 3: fellowship / research / hard-to-get ----------
   - id: anthropic
     name: Anthropic
-    url: https://www.anthropic.com
+    url: https://www.anthropic.com/careers
     signup_url: https://www.anthropic.com/careers
     category: research_fellowship
     tier: 3
-    fit_notes: Safety, red-team, and contractor data roles appear here periodically. Selective.
-    pay_notes: Strong, but selective and intermittent.
+    fit_notes: A company careers page, not an open application. Safety/red-team/contractor data roles show up only now and then. Watch, do not expect a door that is always open.
+    pay_notes: Strong when a role exists, but selective and intermittent.
     tags: [safety, red-team, selective]
 
   - id: openai
     name: OpenAI
-    url: https://openai.com
+    url: https://openai.com/careers
     signup_url: https://openai.com/careers/search
     category: research_fellowship
     tier: 3
-    fit_notes: Runs expert AI-training and contractor programs. Search "expert" or "AI trainer". Very selective.
+    fit_notes: Also a company careers page, not an open application. Runs expert AI-training and contractor programs now and then; search "expert" or "AI trainer". Very selective.
     pay_notes: High when active, very selective. The old /contributions link is unreliable; use careers.
     tags: [expert, contractor, selective]
 
