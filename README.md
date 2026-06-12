@@ -84,4 +84,6 @@ Promote a discovered candidate by moving it from `discovered_candidates.yml` int
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Proprietary. Copyright (c) 2026 Angela Hudson. All Rights Reserved. This repo is
+public for viewing only; no permission is granted to use, copy, modify, or distribute
+without written permission. See [LICENSE](LICENSE).
