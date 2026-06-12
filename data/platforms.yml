@@ -209,16 +209,6 @@ platforms:
     pay_notes: Per-study rates set by researchers. Easy entry, uneven volume.
     tags: [research, studies, easy-entry]
 
-  - id: arc_prize
-    name: ARC Prize
-    url: https://arcprize.org
-    signup_url: https://arcprize.org
-    category: research_fellowship
-    tier: 3
-    fit_notes: Reasoning benchmark with prize money. A competition, not steady work, but in your wheelhouse.
-    pay_notes: Prize-based, not wages. Competition.
-    tags: [reasoning, competition, prize]
-
   - id: humanloop
     name: Humanloop
     url: https://humanloop.com
@@ -228,3 +218,94 @@ platforms:
     fit_notes: NOTE - this is an LLM eval/dev tooling company, not a gig platform. Watch for full-time/contract roles.
     pay_notes: Not gig work. Salaried roles only.
     tags: [tooling, company, not-gig]
+
+  # ---------- Contests / competitions (prize-based, not wages) ----------
+  - id: kaggle
+    name: Kaggle
+    url: https://www.kaggle.com
+    signup_url: https://www.kaggle.com/competitions
+    category: contest
+    tier: 1
+    fit_notes: ML and data-science competitions. Strong fit for your analytics background. Open to anyone.
+    pay_notes: Prize-based, not wages. Some comps have large cash pools; many are for medals and ranking.
+    tags: [ml, data-science, competition, prize]
+
+  - id: drivendata
+    name: DrivenData
+    url: https://www.drivendata.org
+    signup_url: https://www.drivendata.org/competitions/
+    category: contest
+    tier: 1
+    fit_notes: Data-science-for-good competitions. Clear problems, open entry, good fit.
+    pay_notes: Prize-based. Cash prizes on many competitions.
+    tags: [data-science, social-good, competition]
+
+  - id: devpost
+    name: Devpost
+    url: https://devpost.com
+    signup_url: https://devpost.com/hackathons
+    category: contest
+    tier: 1
+    fit_notes: Hackathon hub. AI-agent and DevOps themed events run constantly; your gatekeeper and Compass work fits well.
+    pay_notes: Prize-based, often cash plus cloud credits. Varies per hackathon.
+    tags: [hackathon, ai-agents, devops]
+
+  - id: aicrowd
+    name: AIcrowd
+    url: https://www.aicrowd.com
+    signup_url: https://www.aicrowd.com/challenges
+    category: contest
+    tier: 2
+    fit_notes: AI and ML research challenges. More research-flavored.
+    pay_notes: Prize-based. Varies by challenge.
+    tags: [ai, ml, research, competition]
+
+  - id: zindi
+    name: Zindi
+    url: https://zindi.africa
+    signup_url: https://zindi.africa/competitions
+    category: contest
+    tier: 2
+    fit_notes: AI competitions, Africa-focused but open globally. Real-world datasets.
+    pay_notes: Prize-based. Cash prizes on many.
+    tags: [ai, ml, competition]
+
+  - id: hackerearth
+    name: HackerEarth
+    url: https://www.hackerearth.com
+    signup_url: https://www.hackerearth.com/challenges/
+    category: contest
+    tier: 2
+    fit_notes: Hackathons and hiring challenges. Mixed dev and ML.
+    pay_notes: Prize-based; some challenges are hiring-linked.
+    tags: [hackathon, dev, hiring]
+
+  - id: topcoder
+    name: Topcoder
+    url: https://www.topcoder.com
+    signup_url: https://www.topcoder.com/challenges
+    category: contest
+    tier: 2
+    fit_notes: Algorithm, development, and design challenges that pay out. More traditional dev.
+    pay_notes: Pays per challenge. Competitive fields.
+    tags: [dev, algorithm, design, paid]
+
+  - id: mlh
+    name: Major League Hacking (MLH)
+    url: https://mlh.io
+    signup_url: https://mlh.io/seasons
+    category: contest
+    tier: 3
+    fit_notes: Open hackathon season. Student-leaning, but anyone can join member events.
+    pay_notes: Mostly prizes and swag, not cash-heavy.
+    tags: [hackathon, community]
+
+  - id: arc_prize
+    name: ARC Prize
+    url: https://arcprize.org
+    signup_url: https://arcprize.org
+    category: contest
+    tier: 3
+    fit_notes: Reasoning benchmark with a large prize pool. Hard, but squarely in your wheelhouse.
+    pay_notes: Prize-based, not wages. Big pool, very hard.
+    tags: [reasoning, competition, prize]
