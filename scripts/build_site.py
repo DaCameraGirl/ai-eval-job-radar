@@ -57,10 +57,11 @@ def _row_html(p: dict, status: dict) -> str:
     signup = status.get("signup_status", "unknown") or "unknown"
     label, color = SIGNUP_BADGE.get(signup, SIGNUP_BADGE["unknown"])
     badge = f'<span class="badge" style="background:{color}">{label}</span>'
+    apply_url = p.get("signup_url") or p["url"]
     return f"""
       <tr>
         <td class="dot">{dot}</td>
-        <td><a href="{e(p['url'])}" target="_blank" rel="noopener">{e(p['name'])}</a></td>
+        <td><a href="{e(apply_url)}" target="_blank" rel="noopener">{e(p['name'])}</a></td>
         <td>{badge}</td>
         <td class="notes">{e(p.get('pay_notes', ''))}</td>
         <td class="notes">{e(p.get('fit_notes', ''))}</td>
