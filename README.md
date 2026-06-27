@@ -1,3 +1,39 @@
+<p align="center">
+  <img src="docs/readme-banner.svg" alt="AI Eval Job Radar — Self-updating directory of AI evaluation, training, and annotation platforms — DuckDB + dbt + Streamlit." width="720" />
+</p>
+
+<p align="center">
+  <strong>Self-updating directory of AI evaluation, training, and annotation platforms — DuckDB + dbt + Streamlit.</strong>
+</p>
+
+<p align="center">
+  <a href="https://dacameragirl.github.io/ai-eval-job-radar/"><img src="https://img.shields.io/badge/Live-GitHub%20Pages-33d69f?style=for-the-badge&logo=github&logoColor=white" alt="Live demo" /></a>
+  <a href="https://github.com/DaCameraGirl/ai-eval-job-radar"><img src="https://img.shields.io/badge/Code-GitHub-58a6ff?style=for-the-badge&logo=github&logoColor=white" alt="Source code" /></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/deploy-GitHub Pages-000000?style=flat-square&logo=github&logoColor=white" alt="deploy-GitHub Pages" />
+  <img src="https://img.shields.io/badge/refresh-weekly PR-58a6ff?style=flat-square" alt="refresh-weekly PR" />
+</p>
+
+### Languages
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-58%25-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/YAML-35%25-CB171E?style=flat-square&logo=github&logoColor=white" alt="YAML" />
+</p>
+
+### Stack
+
+<p align="center">
+  <img src="https://img.shields.io/badge/DuckDB-analytics-58a6ff?style=flat-square" alt="DuckDB-analytics" />
+  <img src="https://img.shields.io/badge/dbt-transforms-FF694B?style=flat-square" alt="dbt-transforms" />
+  <img src="https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=flat-square" alt="Streamlit-UI" />
+</p>
+
+<p align="center">
+  Built by <strong>Angela Hudson</strong> · <a href="https://github.com/DaCameraGirl">DaCameraGirl</a>
+</p>
 # 🛰️ AI Eval Job Radar
 
 [![CI](https://github.com/DaCameraGirl/ai-eval-job-radar/actions/workflows/ci.yml/badge.svg)](https://github.com/DaCameraGirl/ai-eval-job-radar/actions/workflows/ci.yml)
@@ -20,7 +56,9 @@ for: Python ingestion, a warehouse, dbt models, a dashboard. A tracker of AI eva
 that happens to prove I can do the data work those same jobs are about. Yes, that is a
 little meta. That is the point.
 
-## Built with
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Built%20with&fontSize=22&fontColor=e6edf3" width="720" alt="Built with" /></p>
+
 
 - **Python** — ingestion, link and signup checks, the static-site generator, the Streamlit app
 - **SQL (dbt)** — staging and mart models on dbt-duckdb
@@ -30,7 +68,9 @@ little meta. That is the point.
 GitHub's language bar is tuned with `.gitattributes` so it shows all of the above, not
 just Python.
 
-## What it actually does
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=What%20it%20actually%20does&fontSize=22&fontColor=e6edf3" width="720" alt="What it actually does" /></p>
+
 
 | Step | Tool | Job |
 |------|------|-----|
@@ -58,21 +98,27 @@ only claims what it can verify: is the link alive, does the signup page read as 
 shut. Judgment stays with a person. If a platform hides its rates behind a login, the
 radar says so instead of guessing.
 
-## Why DuckDB and not Snowflake
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Why%20DuckDB%20and%20not%20Snowflake&fontSize=22&fontColor=e6edf3" width="720" alt="Why DuckDB and not Snowflake" /></p>
+
 
 Because this is about 50 rows, refreshed once a week. Snowflake would charge me credits
 to watch a spreadsheet sleep. DuckDB gives the same SQL and the same dbt workflow for
 free, runs in the process, and the models are written so they lift into Snowflake later
 if the data ever earns it. Right tool, not the flashy one.
 
-## How updates happen, and why there is no junk in the history
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=How%20updates%20happen%2C%20and%20why%20there%20is%20no%20junk%20in%20the%20history&fontSize=22&fontColor=e6edf3" width="720" alt="How updates happen, and why there is no junk in the history" /></p>
+
 
 Every Monday a GitHub Action re-checks everything and opens a pull request with whatever
 changed. It does not push to `main`. I read the diff and merge it if it is right. Even
 the robot has to ask. On top of that, CI lints the code and rebuilds the whole pipeline
 on every pull request, so nothing lands broken.
 
-## Quick start
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Quick%20start&fontSize=22&fontColor=e6edf3" width="720" alt="Quick start" /></p>
+
 
 ```powershell
 py -3.11 -m venv .venv
@@ -89,7 +135,9 @@ python -m scripts.refresh
 streamlit run app/streamlit_app.py
 ```
 
-## Tavily key (optional)
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Tavily%20key%20(optional)&fontSize=22&fontColor=e6edf3" width="720" alt="Tavily key (optional)" /></p>
+
 
 Discovery is the only part that wants a key. Nothing else does.
 
@@ -101,13 +149,17 @@ Copy-Item .env.example .env
 No key just means discovery skips itself. There is no Snowflake, OpenAI, Anthropic, or
 quantum key anywhere in this project. Never commit `.env`.
 
-## Adding a platform
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Adding%20a%20platform&fontSize=22&fontColor=e6edf3" width="720" alt="Adding a platform" /></p>
+
 
 Edit `data/platforms.yml`, open a pull request, let CI check it. To promote something the
 robot found, move it out of `discovered_candidates.yml` into `platforms.yml` and write
 real fit and pay notes for it.
 
-## License
+<p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=License&fontSize=22&fontColor=e6edf3" width="720" alt="License" /></p>
+
 
 Proprietary. Copyright (c) 2026 Angela Hudson. All Rights Reserved. This repo is public
 so you can look, not so you can take. See [LICENSE](LICENSE).
