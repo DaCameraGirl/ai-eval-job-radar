@@ -57,7 +57,7 @@ that happens to prove I can do the data work those same jobs are about. Yes, tha
 little meta. That is the point.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Built%20with&fontSize=22&fontColor=e6edf3" width="720" alt="Built with" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Built%20with&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Built with" /></p>
 
 
 - **Python** — ingestion, link and signup checks, the static-site generator, the Streamlit app
@@ -69,7 +69,7 @@ GitHub's language bar is tuned with `.gitattributes` so it shows all of the abov
 just Python.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=What%20it%20actually%20does&fontSize=22&fontColor=e6edf3" width="720" alt="What it actually does" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=What%20it%20actually%20does&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="What it actually does" /></p>
 
 
 | Step | Tool | Job |
@@ -99,7 +99,7 @@ shut. Judgment stays with a person. If a platform hides its rates behind a login
 radar says so instead of guessing.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Why%20DuckDB%20and%20not%20Snowflake&fontSize=22&fontColor=e6edf3" width="720" alt="Why DuckDB and not Snowflake" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Why%20DuckDB%20and%20not%20Snowflake&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Why DuckDB and not Snowflake" /></p>
 
 
 Because this is about 50 rows, refreshed once a week. Snowflake would charge me credits
@@ -108,7 +108,7 @@ free, runs in the process, and the models are written so they lift into Snowflak
 if the data ever earns it. Right tool, not the flashy one.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=How%20updates%20happen%2C%20and%20why%20there%20is%20no%20junk%20in%20the%20history&fontSize=22&fontColor=e6edf3" width="720" alt="How updates happen, and why there is no junk in the history" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=How%20updates%20happen%2C%20and%20why%20there%20is%20no%20junk%20in%20the%20history&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="How updates happen, and why there is no junk in the history" /></p>
 
 
 Every Monday a GitHub Action re-checks everything and opens a pull request with whatever
@@ -117,7 +117,7 @@ the robot has to ask. On top of that, CI lints the code and rebuilds the whole p
 on every pull request, so nothing lands broken.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Quick%20start&fontSize=22&fontColor=e6edf3" width="720" alt="Quick start" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Quick%20start&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Quick start" /></p>
 
 
 ```powershell
@@ -136,7 +136,7 @@ streamlit run app/streamlit_app.py
 ```
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Tavily%20key%20(optional)&fontSize=22&fontColor=e6edf3" width="720" alt="Tavily key (optional)" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Tavily%20key%20(optional)&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Tavily key (optional)" /></p>
 
 
 Discovery is the only part that wants a key. Nothing else does.
@@ -150,7 +150,7 @@ No key just means discovery skips itself. There is no Snowflake, OpenAI, Anthrop
 quantum key anywhere in this project. Never commit `.env`.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Adding%20a%20platform&fontSize=22&fontColor=e6edf3" width="720" alt="Adding a platform" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Adding%20a%20platform&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Adding a platform" /></p>
 
 
 Edit `data/platforms.yml`, open a pull request, let CI check it. To promote something the
@@ -158,7 +158,7 @@ robot found, move it out of `discovered_candidates.yml` into `platforms.yml` and
 real fit and pay notes for it.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=License&fontSize=22&fontColor=e6edf3" width="720" alt="License" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=License&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="License" /></p>
 
 
 Proprietary. Copyright (c) 2026 Angela Hudson. All Rights Reserved. This repo is public
